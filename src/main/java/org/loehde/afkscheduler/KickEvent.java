@@ -1,5 +1,7 @@
 package org.loehde.afkscheduler;
 
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
@@ -31,8 +33,9 @@ class KickEvent implements Listener {
         }
 
         isTaskRunning = true;
-        this.task = new KickTask(plugin).runTaskTimer(plugin, 0, 20 * plugin.getRefreshThreshold());
         plugin.getLogger().info(plugin.getDescription().getName() + " started kickTask");
+        this.task = new KickTask(plugin).runTaskTimer(plugin, 0, 20 * plugin.getRefreshThreshold());
+
     }
 
     @EventHandler(priority = EventPriority.HIGH)

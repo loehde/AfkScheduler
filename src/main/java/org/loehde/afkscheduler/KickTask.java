@@ -50,7 +50,7 @@ public class KickTask extends BukkitRunnable {
                         } else {
                             builder.append(player.getName());
                         }
-                        Bukkit.getOnlinePlayers().forEach(p -> p.sendMessage(builder.toString() + ChatColor.RED + afkScheduler.getBroadcastMessage()));
+                        Bukkit.getOnlinePlayers().forEach(p -> p.sendMessage( builder.toString() + ChatColor.RED + afkScheduler.getBroadcastMessage()));
                     }
                 }
             }
@@ -59,25 +59,28 @@ public class KickTask extends BukkitRunnable {
 
     private String activateColors(String string) {
         StringBuilder builder = new StringBuilder(string);
-        for (int i = 0; i < builder.length(); i++) {
+        for (int i = 0; i < builder.length()-1; i++) {
             char index = builder.charAt(i);
             if (index == '&') {
-                if (i+1 < builder.length()) {
-                    char option = builder.charAt(i+1);
-                    // check for 0-9
-                    if ('0' <= option && option <= '9') {
-                        builder.setCharAt(i, '§');
-                        continue;
-                    }
-                    // check for k-o
-                    if ('k' <= option && option <= 'o') {
-                        builder.setCharAt(i, '§');
-                        continue;
-                    }
-                    // check for r
-                    if (option == 'r') {
-                        builder.setCharAt(i, '§');
-                    }
+                char option = builder.charAt(i+1);
+                // check for 0-9
+                if ('0' <= option && option <= '9') {
+                    builder.setCharAt(i, '\u00A7');
+                    continue;
+                }
+                // check for a-f
+                if ('a' <= option && option <= 'f') {
+                    builder.setCharAt(i, '\u00A7');
+                    continue;
+                }
+                // check for k-o
+                if ('k' <= option && option <= 'o') {
+                    builder.setCharAt(i, '\u00A7');
+                    continue;
+                }
+                // check for r
+                if (option == 'r') {
+                    builder.setCharAt(i, '\u00A7');
                 }
             }
         }
