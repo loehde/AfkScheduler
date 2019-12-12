@@ -50,7 +50,6 @@ public class KickTask extends BukkitRunnable {
                         } else {
                             builder.append(player.getName());
                         }
-                        //Bukkit.getOnlinePlayers().forEach(p -> p.sendMessage((Object)ChatColor.getByChar(s.charAt(1))+ player.getName() + (Object) ChatColor.RED + " has been kicked for being afk"));
                         Bukkit.getOnlinePlayers().forEach(p -> p.sendMessage(builder.toString() + ChatColor.RED + afkScheduler.getBroadcastMessage()));
                     }
                 }

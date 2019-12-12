@@ -3,7 +3,6 @@ package org.loehde.afkscheduler;
 import com.earth2me.essentials.Essentials;
 import net.milkbowl.vault.chat.Chat;
 import org.bukkit.Bukkit;
-import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 import java.util.logging.Logger;
