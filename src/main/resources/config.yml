@@ -1,0 +1,17 @@
+# the message displayed to the player once they are kicked
+kick-message: "Kicked for being afk"
+
+# the message displayed to everyone when a player are kicked
+broadcast-message: " has been kicked for being afk"
+
+# after the total amount of online players reaches or exceeds this threshold, afk players will automatically be kicked
+player-threshold: 10
+
+# if set to true, a notification will be sent in chat saying who got kicked
+public-kick: false
+
+# timer in seconds, time then the threshold is meet
+time-threshold: 600
+
+# timer in seconds, how often should the kick event run default is 30 seconds
+refresh-threshold: 30

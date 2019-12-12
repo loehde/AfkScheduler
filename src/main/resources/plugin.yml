@@ -1,0 +1,16 @@
+name: AfkScheduler
+version: 1.0
+main: org.loehde.afkscheduler.AfkScheduler
+api-version: 1.14
+authors: [KasperLoehde/Unoplex]
+depend: [Essentials]
+description: kicks afk players after a specific number of online players is reached and after a specified time
+commands:
+    afkscheduler:
+        usage: /afkscheduler reload-config
+        description: reloads the config file
+
+permissions:
+    AfkScheduler.kickBypass:
+        description: players with this permission will not be kicked when afk
+        default: false
